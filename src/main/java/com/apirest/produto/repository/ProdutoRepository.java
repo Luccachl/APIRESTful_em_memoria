@@ -8,6 +8,7 @@ import java.util.NoSuchElementException;
 import org.springframework.stereotype.Repository;
 
 import com.apirest.produto.model.Produto;
+import com.apirest.produto.model.exception.ResourceNotFoundException;
 
 @Repository
 public class ProdutoRepository {
@@ -66,7 +67,7 @@ public class ProdutoRepository {
         Optional<Produto> produtoEncontrado = obterPorId(produto.getId());
 
         if(produtoEncontrado.isEmpty()){
-            throw new NoSuchElementException("Produto não encontrado");
+            throw new ResourceNotFoundException("Produto não encontrado");
         }
 
         deletar(produto.getId());
