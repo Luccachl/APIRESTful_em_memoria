@@ -1,18 +1,8 @@
-package com.apirest.produto.model;
+package com.apirest.produto.shared;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-@Entity
-@Table
-public class Produto {
+public class ProdutoDTO {
     
     //#region Atributos
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String nome;
